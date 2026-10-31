@@ -186,5 +186,4 @@ The automated suite covers chunking, retrieval, citation fallback, permissions a
 - `docs/DEMO_SCRIPT.md` — suggested live demonstration.
 - `docs/PRESENTATION_OUTLINE.md` — slide-by-slide presentation content.
 - `docs/GEMINI_SETUP.md` — provider configuration, migration and troubleshooting.
-#   A I - K n o w l e d g e - A s s i s t a n t  
- 
+#
