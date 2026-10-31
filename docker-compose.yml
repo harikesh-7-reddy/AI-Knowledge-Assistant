@@ -1,0 +1,27 @@
+services:
+  backend:
+    build: ./backend
+    container_name: enterprise-brain-api
+    environment:
+      JWT_SECRET: ${JWT_SECRET:-change-this-development-secret-before-deployment}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_CHAT_MODEL: ${GEMINI_CHAT_MODEL:-gemini-3.6-flash}
+      GEMINI_EMBEDDING_MODEL: ${GEMINI_EMBEDDING_MODEL:-gemini-embedding-001}
+      GEMINI_EMBEDDING_DIMENSION: ${GEMINI_EMBEDDING_DIMENSION:-3072}
+      DATA_DIR: /app/data
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+    volumes:
+      - enterprise_brain_data:/app/data
+    ports:
+      - "8000:8000"
+  frontend:
+    build: ./frontend
+    container_name: enterprise-brain-web
+    environment:
+      API_PROXY_TARGET: http://backend:8000
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+volumes:
+  enterprise_brain_data:

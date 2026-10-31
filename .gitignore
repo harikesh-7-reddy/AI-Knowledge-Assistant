@@ -1,0 +1,14 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+dist/
+backend/data/
+.DS_Store
+**/.env.backup-*
+
+# Ignore nested repository clone
+AI-Knowledge-Assistant/

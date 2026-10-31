@@ -1,0 +1,13 @@
+ENGINEERING DEPARTMENT – DEVELOPER ONBOARDING
+
+Development environment
+New engineers should use the company-approved development environment and request repository access through the engineering access workflow. Multi-factor authentication must be enabled for source-control and cloud accounts. Production credentials must never be stored in source code, shared chat, or local plaintext configuration files.
+
+Code review
+Every change to a protected branch requires at least one approved peer review and passing automated checks. Pull requests should explain the purpose of the change, include relevant tests, and identify any operational risk. Emergency changes must be documented and reviewed retrospectively according to the incident process.
+
+Incident response
+When an engineer identifies a production incident, they should notify the on-call channel, create or update the incident record, and follow the service runbook. Do not post customer secrets, access tokens, or personal data in public channels. The incident lead coordinates status updates and recovery actions.
+
+Release process
+Releases are deployed through the approved CI/CD pipeline. Engineers must not bypass required checks or deploy directly to production from an unreviewed local build. Database changes should include a rollback or recovery plan.
